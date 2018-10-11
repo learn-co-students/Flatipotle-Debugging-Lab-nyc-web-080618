@@ -13,19 +13,29 @@ const DEFAULT_STATE = {
 
 class Form extends Component {
   state = {
-    ...DEFAULT_STATE
+    protein: [],
+    fillings: [],
+    toppings: [],
+    sides: []
   }
 
-  handleSubmit() {
+  handleSubmit = (event) => {
     event.preventDefault()
     document.getElementById("order-form").reset()
+    this.setState({
+      protein: [],
+      fillings: [],
+      toppings: [],
+      sides: []
+    })
     this.props.addOrder(this.state)
     this.setState({
       ...DEFAULT_STATE
     })
   }
 
-  handleChange() {
+  handleChange = (event) => {
+    debugger
     const itemType = event.target.name
     const item = event.target.value
 
