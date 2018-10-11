@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Side from "./Side"
 
 class Order extends Component {
   state = {
@@ -6,10 +7,22 @@ class Order extends Component {
   }
 
   handleClick = () => {
-    this.state.isClicked = !this.state.isClicked
+
+    if(this.state.isClicked){
+      this.setState({
+        isClicked:false
+      })
+
+    } else{ this.setState({
+        isClicked:true
+      })
+    }
+
+
   }
 
   render() {
+    //debugger
     return (
       <div className="ui centered raised card">
         <div className="image">
@@ -17,6 +30,7 @@ class Order extends Component {
         </div>
         <div className="content">
           <b>Protein:</b><br />
+
           { this.props.protein.length > 0 ? this.props.protein.join(", ") : "None" }
           <br />
           <b>Fillings:</b><br />
