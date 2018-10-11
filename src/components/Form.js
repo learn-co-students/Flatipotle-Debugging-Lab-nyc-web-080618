@@ -19,10 +19,14 @@ class Form extends Component {
   handleSubmit = event => {
     event.preventDefault()
     document.getElementById("order-form").reset()
-    this.props.addOrder(this.state)
-    this.setState({
-      ...DEFAULT_STATE
-    })
+    if (this.state.protein.length === 0 && this.state.fillings.length === 0 && this.state.toppings.length === 0 && this.state.sides.length === 0) {
+      console.log('you need to order something')
+    } else {
+      this.props.addOrder(this.state)
+      this.setState({
+        ...DEFAULT_STATE
+      })
+    }
   }
 
   handleChange = event => {
