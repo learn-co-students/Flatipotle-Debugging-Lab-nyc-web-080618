@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
+import Side from './Side.js'
 
 class Order extends Component {
-  state = {
+  constructor(){
+  super()
+  this.state = {
     isClicked: false
   }
+}
 
   handleClick = () => {
-    this.state.isClicked = !this.state.isClicked
+    this.setState({
+      isClicked: !this.state.isClicked
+    })
   }
 
   render() {
