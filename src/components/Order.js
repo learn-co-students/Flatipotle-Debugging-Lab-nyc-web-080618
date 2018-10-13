@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Side from './Side.js'
 
 class Order extends Component {
   state = {
@@ -6,7 +7,11 @@ class Order extends Component {
   }
 
   handleClick = () => {
-    this.state.isClicked = !this.state.isClicked
+    if (this.state.isClicked){
+      this.setState({isClicked: false})
+    } else {
+      this.setState({isClicked: true})
+    }
   }
 
   render() {
