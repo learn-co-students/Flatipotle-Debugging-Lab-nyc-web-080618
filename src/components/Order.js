@@ -1,15 +1,22 @@
+// dependencies
 import React, { Component } from 'react'
 
-class Order extends Component {
+// user files
+import Side from './Side'
+
+export default class Order extends Component {
   state = {
     isClicked: false
   }
 
   handleClick = () => {
-    this.state.isClicked = !this.state.isClicked
+    this.setState({
+      isClicked: !this.state.isClicked
+    })
   }
 
   render() {
+    console.log("these are props", this.props);
     return (
       <div className="ui centered raised card">
         <div className="image">
@@ -42,4 +49,4 @@ class Order extends Component {
   }
 }
 
-export default Order
+// export default Order - moved above to class delcaration
