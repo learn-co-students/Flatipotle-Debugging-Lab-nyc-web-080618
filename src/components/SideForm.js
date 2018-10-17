@@ -1,3 +1,4 @@
+// dependencies
 import React from 'react'
 
 const SideForm = (props) => {
@@ -106,3 +107,5 @@ const SideForm = (props) => {
     </div>
   )
 }
+
+export default SideForm
